@@ -1,0 +1,51 @@
+{
+  "name": "hanoi",
+  "description": "",
+  "version": "0.0.0",
+  "author": "PacificD",
+  "license": "MIT",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PacificD/hanoi.git"
+  },
+  "keywords": [
+    "Monorepo",
+    "Turborepo",
+    "PNPM",
+    "Next.js",
+    "TypeScript"
+  ],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@7.29.1",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "clean": "turbo clean",
+    "lint": "turbo run lint",
+    "type-check": "turbo type-check",
+    "build": "turbo run build",
+    "ui:add": "pnpm --filter ui ui:add",
+    "publish": "changeset publish --registry=https://registry.npmjs.org",
+    "changeset": "changeset",
+    "packages-version": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/cli": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "turbo": "latest",
+    "typescript": "latest",
+    "tsup": "latest",
+    "vitest": "latest"
+  }
+}
