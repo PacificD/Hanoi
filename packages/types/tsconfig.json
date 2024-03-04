@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./src",
+    "emitDeclarationOnly": true,
+    "target": "esnext"
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@hanoi/types",
+  "description": "",
+  "version": "0.0.0",
+  "types": "./src/index.ts",
+  "files": [
+    "./src/index.ts"
+  ]
+}
