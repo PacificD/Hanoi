@@ -1,3 +1,5 @@
+import { CustomEventData } from './event'
+
 declare global {
   interface Window {
     hanoi: IHanoi
@@ -11,7 +13,6 @@ export enum UserClient {
 }
 
 export interface IConfig {
-  appID: string
   appSecret: string
   host: string
   client: UserClient
@@ -19,5 +20,5 @@ export interface IConfig {
 
 export interface IHanoi {
   _config: IConfig
-  send: () => void
+  send: (data: CustomEventData) => void
 }

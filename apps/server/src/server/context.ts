@@ -14,16 +14,13 @@ export const prisma = new PrismaClient()
 export async function createContext({ req, res }: CreateFastifyContextOptions) {
   if (req.headers.authorization) {
     try {
-      const app = await decodeAndVerifyJwtToken(
-        req.headers.authorization.split(' ')[1]
-      )
-      return { req, res, prisma, app }
+      const appID = await decodeAndVerifyJwtToken(req.headers.authorization)
+      return { req, res, prisma, appID: +appID }
     } catch (err) {
       throw new TRPCError({ message: 'Unauthorized', code: 'UNAUTHORIZED' })
     }
   }
-
-  return { req, res, prisma }
+  return { req, res, prisma, appID: -1 }
 }
 
 export type Context = Awaited<ReturnType<typeof createContext>>

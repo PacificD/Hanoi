@@ -10,7 +10,6 @@
 
 ### server:
 
-- [] prisma
-- [] postgres
-- [] auth
-- [] feat: delete app
+- [ ] prettyLogger
+- [ ] auth
+- [ ] feat: delete app

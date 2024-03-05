@@ -26,25 +26,21 @@ export const createHanoiApp = async (
     })
   }
 
-  const token = jwt.sign(
-    {
-      name: input.name,
-      client: input.client,
-      time: new Date().getTime()
-    },
-    authConfig.secretKey
-    // { expiresIn: authConfig.jwtExpiresIn }
-  )
-
-  const user = await ctx.prisma.app.create({
+  const app = await ctx.prisma.app.create({
     data: {
       name: input.name,
       client: input.client
     }
   })
 
+  const token = jwt.sign(
+    app.id + '',
+    authConfig.secretKey
+    // { expiresIn: authConfig.jwtExpiresIn }
+  )
+
   return {
-    ...user,
+    ...app,
     token
   }
 }

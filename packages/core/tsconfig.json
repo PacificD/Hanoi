@@ -1,0 +1,16 @@
+{
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "lib": ["es2017", "dom"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,14 @@
+-- CreateTable
+CREATE TABLE "Event" (
+    "id" SERIAL NOT NULL,
+    "createdAt" TIMESTAMPTZ(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMPTZ(3) NOT NULL,
+    "action" VARCHAR(255) NOT NULL,
+    "label" VARCHAR(255) NOT NULL,
+    "appId" INTEGER NOT NULL,
+
+    CONSTRAINT "Event_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "Event" ADD CONSTRAINT "Event_appId_fkey" FOREIGN KEY ("appId") REFERENCES "App"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

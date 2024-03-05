@@ -16,4 +16,15 @@ model App {
   updatedAt DateTime @updatedAt @db.Timestamptz(3)
   name      String   @db.VarChar(255)
   client    String   @db.VarChar(255)
+  Events    Event[]
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  action    String   @db.VarChar(255)
+  label     String   @db.VarChar(255)
+  appId     Int
+  app       App      @relation(fields: [appId], references: [id])
 }
