@@ -1,14 +1,14 @@
 {
+  "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "commonjs",
     "esModuleInterop": true,
     "strict": true,
     "moduleResolution": "node",
-    "noEmit": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

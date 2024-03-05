@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": true,
-    "declarationDir": "./src",
-    "emitDeclarationOnly": true,
-    "target": "esnext"
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": false,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "ESNext",
+    "lib": ["es6", "dom", "es2017"],
+    "outDir": "./dist"
   },
   "include": ["src"]
 }

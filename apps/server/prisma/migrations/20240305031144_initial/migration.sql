@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "App" (
+    "id" SERIAL NOT NULL,
+    "createdAt" TIMESTAMPTZ(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMPTZ(3) NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
+    "client" VARCHAR(255) NOT NULL,
+
+    CONSTRAINT "App_pkey" PRIMARY KEY ("id")
+);

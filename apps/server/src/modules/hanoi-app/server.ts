@@ -1,6 +1,6 @@
 import { App } from '@prisma/client'
 import { TRPCError } from '@trpc/server'
-import { sign } from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 import { Context } from '@/server/type'
 import { authConfig } from '@/config/auth.config'
 import { CreateHanoiAppDto } from './dto'
@@ -26,7 +26,7 @@ export const createHanoiApp = async (
     })
   }
 
-  const token = sign(
+  const token = jwt.sign(
     {
       name: input.name,
       client: input.client,

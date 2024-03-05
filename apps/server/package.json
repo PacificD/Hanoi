@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch ./src",
+    "dev": "tsx watch --no-cache ./src/index.ts",
     "migrate:dev": "prisma migrate dev",
     "studio": "prisma studio"
   },
@@ -24,7 +24,8 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@hanoi/types": "*",
+    "@hanoi/types": "workspace:*",
+    "tsconfig": "workspace:*",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.6",
     "tsx": "latest"

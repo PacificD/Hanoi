@@ -2,8 +2,13 @@
   "name": "@hanoi/types",
   "description": "",
   "version": "0.0.0",
-  "types": "./src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "./src/index.ts"
-  ]
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json"
+  }
 }

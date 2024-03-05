@@ -2,7 +2,11 @@
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@hanoi/*": ["packages/*/src"]
+    },
     "noEmit": true
-  }
+  },
+  "include": ["packages"],
+  "exclude": ["node_modules"]
 }

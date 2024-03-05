@@ -31,6 +31,8 @@
     "type-check": "turbo type-check",
     "build": "turbo run build",
     "ui:add": "pnpm --filter ui ui:add",
+    "migrate:dev": "pnpm --filter @hanoi/server migrate:dev",
+    "studio": "pnpm --filter @hanoi/server prisma studio",
     "publish": "changeset publish --registry=https://registry.npmjs.org",
     "changeset": "changeset",
     "packages-version": "changeset version"
